@@ -48,5 +48,6 @@
 	<classpathentry kind="lib" path="C:/Users/pooja.gupta/Downloads/jar_files/javax.ws.rs-api-2.0.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/pooja.gupta/Downloads/jar_files/junit-4.10.jar"/>
 	<classpathentry kind="lib" path="C:/Users/pooja.gupta/Desktop/MonitorsGUIRequiredDocs/topology.jar"/>
+	<classpathentry kind="lib" path="C:/Users/pooja.gupta/Desktop/MonitorsGUIRequiredDocs/netstorm_bean.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

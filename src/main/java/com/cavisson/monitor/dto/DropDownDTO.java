@@ -33,5 +33,10 @@ public class DropDownDTO
   {
     this.value = value;
   }
+@Override
+public String toString() {
+	return "DropDownDTO [label=" + label + ", value=" + value + "]";
+}
 
+  
 }

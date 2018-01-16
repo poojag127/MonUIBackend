@@ -6,7 +6,6 @@
 package com.cavisson.monitor.services;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.ws.rs.GET;
@@ -69,20 +68,19 @@ import com.cavisson.productui.summary.annotation.Compress;
 	 @Compress
 	 public TierMonitorDataDTO getTreeTableData(@QueryParam("topoName") String topoName,@QueryParam("jsonName") String jsonName,@QueryParam("userName") String userName)
 	 {
-		 MonitorConfigurationUtility monConfUtility = new MonitorConfigurationUtility();
-		 return monConfUtility.getTreeTable(topoName, userName);
+	   MonitorConfigurationUtility monConfUtility = new MonitorConfigurationUtility();
+	   return monConfUtility.getTreeTable(topoName, userName);
 	 }
 	 
 	 @GET
-	 @Path("/getLeafNodeByCategoryName")
+	 @Path("/getChildNodesDataByCategoryName")
 	 @Produces(MediaType.APPLICATION_JSON)
 	 @Compress
-	 public List<ChildNodeDataDTO> getLeafNodeByCategoryName(@QueryParam("topoName") String topoName,@QueryParam("profileName") String profileName,@QueryParam("categoryName") String categoryName, @QueryParam("userName") String userName)
+	 public List<ChildNodeDataDTO> getLeafNodeByCategoryName(@QueryParam("topoName") String topoName,@QueryParam("jsonName") String profileName,@QueryParam("categoryName") String categoryName, @QueryParam("userName") String userName)
 	 {
-		 MonitorConfigurationUtility monConfUtility = new MonitorConfigurationUtility();
-		 return monConfUtility.getLeafNodeByCategoryName(topoName, profileName, categoryName, userName);
+	   MonitorConfigurationUtility monConfUtility = new MonitorConfigurationUtility();
+	   return monConfUtility.getLeafNodeByCategoryName(topoName, profileName, categoryName, userName);
 	 }
-	 
 	 
 	 
 	 @GET
@@ -103,11 +101,10 @@ import com.cavisson.productui.summary.annotation.Compress;
 	 @Path("/getComponentByMon")
 	 @Produces(MediaType.APPLICATION_JSON)
 	 @Compress
-	 public List<ComponentDTO> getComponentByMon(@QueryParam("menuDivenJsonName") String menuDivenJsonName, @QueryParam("userName") String userName)
+	 public List<ComponentDTO> getComponentByMon(@QueryParam("menuDrivenJsonName") String menuDrivenJsonName, @QueryParam("userName") String userName)
 	 {
-		 MonitorComponent monComp = new MonitorComponent();
-		 monComp.getComponentList(menuDivenJsonName, userName);
-		 return null;
+	    MonitorComponent monComp = new MonitorComponent();
+		return monComp.getComponentList(menuDrivenJsonName, userName);
 	 }
 	 
 	 public static void main(String args[])
@@ -115,8 +112,9 @@ import com.cavisson.productui.summary.annotation.Compress;
 		 MonitorWebService web = new MonitorWebService();
 		 //web.getProfileListInTopo("test");
 		 //web.getMonInfoListWithUserFilter("cavisson",(byte)1);
-		 web.getTreeTableData("test", "prof1", "cavisson");
+		// web.getTreeTableData("test", "prof1", "cavisson");
 		 //https://10.10.50.5/ProductUI/productSummary/MonitorWebService/getLeafNodeByCategoryName?topoName=windowTopology&userName=Cavisson&profileName=prof1&categoryName=TCP
 		 //System.out.println(web.getLeafNodeByCategoryName("test", "prof1", "TCP", "cavisson"));
+		 System.out.println(web.getComponentByMon("abc.json", "cavisson"));
 	 }
 }

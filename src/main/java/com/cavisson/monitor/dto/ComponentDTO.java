@@ -7,10 +7,10 @@ public class ComponentDTO
 {
 	private int id = -1;
 	private String type;
-	private String label;
-	private String arg;
-	private String defVal;
-	private String value;
+	private String label = "";
+	private String arg = "";
+	private String defVal = "";
+	private String value = "";
 	private ValidationDTO validationObj = null;
 	private ArrayList<DropDownDTO> dropDownList; //used for dropdowncomponent
 	private ArrayList<ComponentDTO> items; //item for radio button
@@ -160,6 +160,15 @@ public class ComponentDTO
 	public void setValidationObj(ValidationDTO validationObj) 
 	{
 		this.validationObj = validationObj;
+	}
+
+	@Override
+	public String toString() {
+		return "ComponentDTO [id=" + id + ", type=" + type + ", label=" + label
+				+ ", arg=" + arg + ", defVal=" + defVal + ", value=" + value
+				+ ", validationObj=" + validationObj + ", dropDownList="
+				+ dropDownList + ", items=" + items + ", dependentComp="
+				+ dependentComp + ", columnData=" + columnData + "]";
 	}
 	
 	
